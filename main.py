@@ -4,13 +4,17 @@ import math
 import pandas as pd
 
 
-# data = pd.read_csv('./IRIS.csv')
-# print(data)
-
+#------------------------------------
+# To View the dataset
+   # data = pd.read_csv('./IRIS.csv')
+   # print(data)
+#------------------------------------
+#loading dataset
 def load_data(filename):
     with open(filename, 'r') as csvfile:
         lines = csv.reader(csvfile)
         dataset = list(lines)[1:]
+        #changing lables from strings into float
         for i in range(len(dataset)):
             if dataset[i][-1] == 'Iris-setosa':
                 dataset[i][-1] = 0
@@ -22,7 +26,7 @@ def load_data(filename):
             dataset[i] = [float(x) for x in dataset[i]]
     return dataset
 
-
+#separating features and labels into two lists 
 def split_data(data):
     X = []
     y = []
@@ -31,7 +35,7 @@ def split_data(data):
         y.append(data[i][-1])
     return X, y
 
-
+#take some values as trainging randomly
 def split_train_test(X, y, split_ratio):
     train_size = int(len(X) * split_ratio)
     train_X = []
@@ -44,22 +48,22 @@ def split_train_test(X, y, split_ratio):
         train_y.append(test_y.pop(index))
     return train_X, train_y, test_X, test_y
 
-
+#Calculating destace between two objects
 def euclidean_distance(x1, x2):
     distance = 0
     for i in range(len(x1)):
         distance += (x1[i] - x2[i]) ** 2
     return math.sqrt(distance)
 
-
+#KNN classifier class with k = 3
 class KNN:
     def __init__(self, k=3):
         self.k = k
-
+    #fiting k lists with train lists
     def fit(self, X_train, y_train):
         self.X_train = X_train
         self.y_train = y_train
-
+    
     def predict(self, X_test):
         predictions = []
         for i in range(len(X_test)):
