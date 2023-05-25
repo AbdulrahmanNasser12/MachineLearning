@@ -63,7 +63,7 @@ class KNN:
     def fit(self, X_train, y_train):
         self.X_train = X_train
         self.y_train = y_train
-    
+    #predicting the true label using euclidean_distance function
     def predict(self, X_test):
         predictions = []
         for i in range(len(X_test)):
@@ -83,7 +83,7 @@ class KNN:
             predictions.append(int(prediction))
         return predictions
 
-
+# Main
 data = load_data('./IRIS.csv')
 X, y = split_data(data)
 train_X, train_y, test_X, test_y = split_train_test(X, y, 0.9)
@@ -93,7 +93,6 @@ predictions = knn.predict(test_X)
 accuracy = sum(1 for i in range(len(predictions)) if predictions[i] == test_y[i]) / float(len(predictions))
 
 # testing code using samples
-
 sample1 = [5.1, 3.5, 1.4, 0.2]
 sample2 = [6.7, 3.0, 5.2, 2.3]
 sample3 = [6.4, 3.2, 4.5, 1.5]
