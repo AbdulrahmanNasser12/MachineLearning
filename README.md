@@ -1,7 +1,7 @@
 <h1>Iris Flower Pattern Recognition using K-Nearest Neighbors (KNN)</h1>
 
 <p>
-This project is a pattern recognition project implemented using machine learning techniques. It focuses on classifying Iris flowers into different species based on their features. The dataset used in this project is the Iris dataset, which can be downloaded from Kaggle at this link.
+This project is a pattern recognition project implemented using machine learning techniques. It focuses on classifying Iris flowers into different species based on their features. The dataset used in this project is the Iris dataset, which can be downloaded from Kaggle at <a href='https://www.kaggle.com/datasets/dev0914sharma/customer-clustering'>this link.<a/>
 
 </p>
 <h2>Project Overview</h2>
