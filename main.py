@@ -4,11 +4,6 @@ import math
 import pandas as pd
 
 
-#------------------------------------
-# To View the dataset
-   # data = pd.read_csv('./IRIS.csv')
-   # print(data)
-#------------------------------------
 #loading dataset
 def load_data(filename):
     with open(filename, 'r') as csvfile:
